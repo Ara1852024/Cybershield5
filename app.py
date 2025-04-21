@@ -1,4 +1,3 @@
-# main.py
 from flask import Flask, request, jsonify
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from flask_sqlalchemy import SQLAlchemy
@@ -6,8 +5,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import cv2
 import numpy as np
 import os
-import threading
-import webview
 
 # -----------------------
 # Initialize Flask App
@@ -65,7 +62,7 @@ def detect_faces(image_array):
 # -----------------------
 @app.route('/')
 def home():
-    return "✅ Cybershield is running locally as a desktop app!"
+    return "✅ Cybershield is running as a web app!"
 
 @app.route('/signup', methods=['POST'])
 def signup():
@@ -133,12 +130,5 @@ def detect_text():
     else:
         return jsonify({"status": "safe"})
 
-# -----------------------
-# Desktop App Launcher
-# -----------------------
-def start_flask():
-    app.run()
-
 if __name__ == '__main__':
-    threading.Thread(target=start_flask).start()
-    webview.create_window("Cybershield", "http://127.0.0.1:5000")
+    app.run(debug=False, host="0.0.0.0", port=5000)
