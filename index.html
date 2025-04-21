@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybershield</title>
+</head>
+<body>
+    <h1>Welcome to Cybershield</h1>
+
+    <h2>Signup</h2>
+    <form action="/signup" method="POST">
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
+        <button type="submit">Signup</button>
+    </form>
+
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <h2>Face Detection</h2>
+    <form action="/detect_face" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required><br><br>
+        <button type="submit">Detect Faces</button>
+    </form>
+
+    <h2>Text Detection (Exteremist Language)</h2>
+    <form action="/detect_text" method="POST">
+        <textarea name="text" placeholder="Type text to detect extremist language" required></textarea><br><br>
+        <button type="submit">Detect Text</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor folders
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Ignore Python compiled files
+*.pyc
+__pycache__
+
+# Ignore virtual environment folders
+venv/
+env/
+
+# Ignore log files
+*.log
+
+# Ignore package manager folders (node_modules, etc.)
+node_modules/
+
+# Ignore backup and temporary files
+*.bak
+*.swp
+*.tmp
+
+# Ignore OS-related files (Windows and Mac)
+*.desktop
+*.ini
+*.config
+# Flask instance folder and database
+instance/
+*.db
